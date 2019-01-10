@@ -90,6 +90,12 @@ def sum_radii(circles):
     # -------------------------------------------------------------------------
 
 
+    for k in range(len(circles)):
+
+
+
+
+
 ###############################################################################
 # Some problems iterate (loop) through PART of the sequence,
 # perhaps BACKWARDS, as in the   count_last_n_odds   problem below.
