@@ -30,11 +30,11 @@ def main():
     #        RE-commenting out the previous test to reduce the output.
     # -------------------------------------------------------------------------
 
-    #run_test_generate_points_on_circle()
-    #run_test_draw_points_on_circle()
-    # run_test_pizza()
+    run_test_generate_points_on_circle()
+    run_test_draw_points_on_circle()
+    run_test_pizza()
     run_test_polygon()
-    # run_test_fancy_polygon()
+    run_test_fancy_polygon()
 
 
 def run_test_generate_points_on_circle():
@@ -419,16 +419,22 @@ def polygon(window, circle, number_of_segments, color, thickness):
     # -------------------------------------------------------------------------
     circle.attach_to(window)
     points = generate_points_on_circle(circle,number_of_segments)
-    for k in range(number_of_segments):
-        line = rg.Line(points[1], points[k])
+    for k in range(number_of_segments - 1):
+        line = rg.Line(points[k + 1], points[k])
         line.color = color
         line.thickness = thickness
         line.attach_to(window)
 
+    line = rg.Line(points[k + 1], points[0])
+    line.attach_to(window)
+    line.thickness = thickness
+    line.color = color
+
+
     window.render()
 
 
-def run_test_fancy_polygon():
+def run_test_fancy_polygon(): #2nd last priority
     """ Tests the   fancy_polygon   function. """
     # -------------------------------------------------------------------------
     # TODO: 9. Implement this TEST function.
