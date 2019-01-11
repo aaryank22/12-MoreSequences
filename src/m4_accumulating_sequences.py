@@ -427,7 +427,19 @@ def rectangles_from_circles(circles):
     # -------------------------------------------------------------------------
 
     list = []
+
     for k in range(len(circles)):
+        circle = circles[k]
+        x1 = circle.center.x + circle.radius
+        y1 = circle.center.y - circle.radius
+        x2 = circle.center.x - circle.radius
+        y2 = circle.center.y + circle.radius
+        rectangle = rg.Rectangle(rg.Point(x1, y1), rg.Point(x2, y2))
+        list = list + [rectangle]
+
+    return list
+
+
 
 
 
